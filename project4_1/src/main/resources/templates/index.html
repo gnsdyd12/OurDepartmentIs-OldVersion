@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<header class="nav_bar">
+    <h1>open blog for cs</h1>
+    <nav>
+        <a href="/write_post">글쓰기</a>
+        <span>Menu2</span>
+        <span>Menu3</span>
+    </nav>
+</header>
+<p th:text="'안녕하세요,'+ ${data}">spring</p>
+</body>
+
+<style>
+    .nav_bar{
+        display: flex;
+        justify-content: space-between;
+        background-color: darkseagreen;
+    }
+    .nav_bar>nav{
+        padding: 30px;
+    }
+
+</style>
+</html>
