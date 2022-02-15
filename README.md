@@ -6,7 +6,7 @@
 ## 1.빌드 2.구현 3.배포
 
 ### 1.빌드
-front-end: react 
+front-end: react    
 framework: spring
 
 ### 2.구현
@@ -16,6 +16,6 @@ framework: spring
 1. 야간모드
 
 ### 3.배포
-AWS-EC2를 이용한 배포
+AWS-EC2를 이용한 배포    
 
 
