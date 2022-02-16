@@ -18,3 +18,7 @@ framework: spring
 
 ### 3.배포
 AWS-EC2를 이용한 배포
+
+### 4.참고사이트    
+velog-https://velog.io/
+brunch-https://brunch.co.kr/
