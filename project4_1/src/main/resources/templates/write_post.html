@@ -5,6 +5,37 @@
     <title>Title</title>
 </head>
 <body>
-<p th:text="${data}"> spring!!</p>
+<h2>글 쓰기</h2>
+<form class="writeForm" action="/postdata" method="POST">
+    <div class="title">
+        <label>
+            제목:
+            <input type="text" name="title" required>
+        </label>
+    </div>
+    <div class="contents">
+        <label>
+            본문 :
+            <input type="text" name="contents" required>
+        </label>
+    </div>
+    <button class="summit_btn" type="submit" name="submit">포스팅하기</button>
+</form>
 </body>
+<style>
+    .title>label>input{
+        width: 300px;
+        height: 30px;
+        margin: 10px;
+    }
+    .contents>label>input{
+        height: 300px;
+        width: 50%;
+        margin: 10px;
+    }
+    .summit_btn{
+        position: relative;
+        left: 49%;
+    }
+</style>
 </html>

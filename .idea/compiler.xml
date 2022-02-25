@@ -10,5 +10,9 @@
         <module name="project4_1.project4_1.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="project4_1.project4_1.main~1" target="11" />
+      <module name="project4_1.project4_1.test~1" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
