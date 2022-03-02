@@ -38,3 +38,7 @@ out/
 
 
 application.yml
+
+build.gradle
+
+settings.gradle

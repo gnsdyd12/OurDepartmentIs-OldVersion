@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${post.title}"></h1>
+    <h6 th:text="${post.writer}"></h6>
+    <p th:text="${post.contents}"></p>
+    <p th:text="${post.views}"></p>
+</div>
+</body>
+<style>
+    .container{
+        border: solid 1px;
+        margin: 0px 100px 100px 100px;
+
+    }
+</style>
+</html>

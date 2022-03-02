@@ -11,24 +11,37 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO) //id 자동증가
     private Long id;
     @Column
-    @NotNull
-    private String title;
+    private String writer; //작성자
     @Column
     @NotNull
-    private String contents;
+    private String title; //제목
     @Column
-    private LocalDateTime create_time = LocalDateTime.now();
+    @NotNull
+    private String contents; //본문
+    @Column
+    private LocalDateTime create_time = LocalDateTime.now(); //생성시간
+    @Column
+    private Long views = 0L; //조회수
 
     public Post() {
 
     }
 
     public Post(PostDto.PostSaveDto postSaveDto) {
-        this.id=-1l;
+        this.id = -1l;
         this.title = postSaveDto.getTitle();
         this.contents = postSaveDto.getContents();
+        this.writer = postSaveDto.getWriter();
+        this.views = 0L;
     }
 
+    public String getWriter() {
+        return writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
+    }
 
     public Long getId() {
         return id;
@@ -60,5 +73,13 @@ public class Post {
 
     public void setCreate_time(LocalDateTime create_time) {
         this.create_time = create_time;
+    }
+
+    public Long getViews() {
+        return views;
+    }
+
+    public void setViews(Long views) {
+        this.views = views;
     }
 }
