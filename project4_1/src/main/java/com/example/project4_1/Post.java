@@ -15,7 +15,7 @@ public class Post {
     @Column
     @NotNull
     private String title; //제목
-    @Column
+    @Column(columnDefinition = "LONGTEXT")
     @NotNull
     private String contents; //본문
     @Column

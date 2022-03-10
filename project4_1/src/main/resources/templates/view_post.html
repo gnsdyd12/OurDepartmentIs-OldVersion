@@ -8,7 +8,7 @@
 <div class="container">
     <h1 th:text="${post.title}"></h1>
     <h6 th:text="${post.writer}"></h6>
-    <p th:text="${post.contents}"></p>
+    <textarea th:text="${post.contents}" readonly></textarea>
     <p th:text="${post.views}"></p>
 </div>
 </body>
