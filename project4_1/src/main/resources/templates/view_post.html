@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor-viewer.min.css" />
 </head>
 <body>
+
+
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-viewer.js"></script>
 <div class="container">
     <h1 th:text="${post.title}"></h1>
-    <h6 th:text="${post.writer}"></h6>
-    <textarea th:text="${post.contents}" readonly></textarea>
+    <div id="viewer"></div>
+<!--    <h6 th:text="${post.writer}"></h6>-->
+<!--    <textarea th:text="${post.contents}" readonly></textarea>-->
     <p th:text="${post.views}"></p>
 </div>
 </body>
@@ -19,4 +24,15 @@
 
     }
 </style>
+<script th:inline="javascript">
+
+    let contents = [[${post.contents}]];
+    const Viewer = toastui.Editor;
+
+    const viewer = new Viewer({
+        el: document.querySelector('#viewer'),
+        height: '600px',
+        initialValue: contents
+    });
+</script>
 </html>
