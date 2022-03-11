@@ -14,6 +14,7 @@
    - 로그인
    - 글쓰기(toast ui editor API 사용) -https://nhn.github.io/tui.editor/latest/
    - 야간모드
+   - 게시글 추천기능
    - 학업(학년 별 포스팅 기능) / 생활(전 학년 공통) 탭 구분
 
 ### 2. 배포
