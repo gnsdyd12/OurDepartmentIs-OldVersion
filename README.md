@@ -27,5 +27,5 @@ AWS-EC2를 이용한 배포
   - intelliJ (IDE)
 
 ### 4. 참고사이트
-velog - https://velog.io/
-brunch - https://brunch.co.kr/
+- velog - https://velog.io/
+- brunch - https://brunch.co.kr/
