@@ -12,7 +12,7 @@
  - 기능
    - MAIN UI 구현
    - 로그인
-   - 글쓰기(toast ui editor API 사용) -https://nhn.github.io/tui.editor/latest/
+   - 글쓰기(toast ui editor API 사용) - https://nhn.github.io/tui.editor/latest/
    - 야간모드
    - 게시글 추천기능
    - 학업(학년 별 포스팅 기능) / 생활(전 학년 공통) 탭 구분
@@ -26,6 +26,6 @@ AWS-EC2를 이용한 배포
   - sqlyog (Database 관리 도구)
   - intelliJ (IDE)
 
-### 4.참고사이트
-velog - https://velog.io/    
-brunch - https://brunch.co.kr/
+### 4. 참고사이트
+- velog - https://velog.io/
+- brunch - https://brunch.co.kr/
