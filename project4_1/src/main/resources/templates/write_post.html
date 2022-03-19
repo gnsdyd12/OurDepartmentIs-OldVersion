@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
@@ -9,9 +10,10 @@
 </head>
 <body>
 <h2>글 쓰기</h2>
-<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js">
+</script>
 <div id="editor"></div>
-<button onclick="submit()">포스팅</button>
+<!--<button onclick="submit()">포스팅</button>-->
 
 <form id="writeForm" action="/postdata" method="POST" onsubmit="handlerEditor()">
     <div class="title">
@@ -49,6 +51,8 @@
     }
 </style>
 <script>
+
+
     const Editor = toastui.Editor;
 
     const title = document.querySelector("title");
@@ -64,8 +68,8 @@
         const editorBody = editor.getMarkdown();
         const input =  document.getElementById('contents');
         input.value = editorBody;
-
     }
+
 
 </script>
 </html>

@@ -28,7 +28,7 @@ public class Post {
     }
 
     public Post(PostDto.PostSaveDto postSaveDto) {
-        this.id = -1l;
+        this.id = 0l;
         this.title = postSaveDto.getTitle();
         this.contents = postSaveDto.getContents();
         this.writer = postSaveDto.getWriter();
