@@ -1,6 +1,4 @@
-package com.example.project4_1;
-
-import java.sql.Timestamp;
+package com.example.project4_1.post;
 
 public class PostDto {
     public static class PostSaveDto {

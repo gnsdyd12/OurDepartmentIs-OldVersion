@@ -1,7 +1,6 @@
-package com.example.project4_1;
+package com.example.project4_1.post;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
