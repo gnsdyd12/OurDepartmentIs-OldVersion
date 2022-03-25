@@ -1,7 +1,7 @@
 package com.example.project4_1;
 
+import com.example.project4_1.member.MyLoginSuccessHandler;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -31,15 +31,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                     .authorizeRequests()
-                    .antMatchers("/", "/login","/member/newMember").permitAll()
-                    .antMatchers("/adminPage").hasRole("ADMIN")
+                    .antMatchers("/", "/member/login").permitAll()
+                    .antMatchers("/member/adminPage").hasRole("ADMIN")
                     .antMatchers("/**").authenticated()
                 .and()
                 .formLogin()
-                    .defaultSuccessUrl("/")
-                    .permitAll()
-                    .and()
-                .logout();
+                    .loginPage("/member/login")
+                .loginProcessingUrl("/member/doLogin")
+                    .usernameParameter("id")
+                    .passwordParameter("pw")
+                    .successHandler(new MyLoginSuccessHandler());
+
 
 
     }

@@ -12,3 +12,6 @@ spring:
     user:
       name: user
       password: 1234
+  handlebars:
+    suffix: .html
+    expose-session-attributes: true

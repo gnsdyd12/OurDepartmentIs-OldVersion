@@ -44,4 +44,9 @@ public class MemberController {
         memberRepository.save(memberForm);
         return "redirect:/login";
     }
+
+    @GetMapping("/login")
+    public String getLoginForm(){
+        return "member/loginPage";
+    }
 }
