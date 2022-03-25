@@ -32,7 +32,7 @@ public class postController {
     @GetMapping("write_post")
     public String writePost(ModelAndView modelAndView) {
         //model.addAttribute("data","hello!!");
-        return "write_post";
+        return "post/write_post";
     }
     //게시글 본문
     @GetMapping("view_post/{id}")
@@ -41,7 +41,7 @@ public class postController {
         postService.view_Count(id);
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.addObject("post",post.get());
-        modelAndView.setViewName("view_post");
+        modelAndView.setViewName("post/view_post");
         return modelAndView;
     }
 
