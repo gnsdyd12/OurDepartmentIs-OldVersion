@@ -10,11 +10,14 @@
     <h1>open blog for cs</h1>
     <nav>
         <a href="write_post">글쓰기</a>
+        <div th:if="${#authorization.expr('isAuthenticated()')}">
+            <a href="/doLogout">로그아웃</a>
+        </div>
+        <div th:unless="${#authorization.expr('isAuthenticated()')}">
+            <a href="member/login">로그인</a>
+        </div>
+        <div th:text="${session.greeting}"></div>
 
-        <a href="member/login">로그인</a>
-        {{greeting}}
-        <span>Menu2</span>
-        <span>Menu3</span>
     </nav>
 </header>
 
@@ -28,7 +31,7 @@
 
 <style>
     .container {
-        margin: 20px 150px 150px 150px;
+        margin: 10px;
         display: grid;
         grid-gap: 20px;
         grid-template-columns: repeat(4, 1fr);

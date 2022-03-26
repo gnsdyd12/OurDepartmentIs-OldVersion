@@ -37,7 +37,7 @@ out/
 .vscode/
 
 
-application.yml
+**/application.yml
 
 build.gradle
 

@@ -30,19 +30,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                    .authorizeRequests()
-                    .antMatchers("/", "/member/login").permitAll()
-                    .antMatchers("/member/adminPage").hasRole("ADMIN")
-                    .antMatchers("/**").authenticated()
+                .authorizeRequests()
+                .antMatchers("/", "/member/login", "/member/newMember").permitAll()
+                .antMatchers("/member/adminPage").hasRole("ADMIN")
+                .antMatchers("/**").authenticated()
                 .and()
                 .formLogin()
-                    .loginPage("/member/login")
+                .loginPage("/member/login")
                 .loginProcessingUrl("/member/doLogin")
-                    .usernameParameter("id")
-                    .passwordParameter("pw")
-                    .successHandler(new MyLoginSuccessHandler());
-
-
+                .usernameParameter("id")
+                .passwordParameter("pw")
+                .successHandler(new MyLoginSuccessHandler())
+                .and()
+                .logout()
+                .logoutUrl("/doLogout")
+                .logoutSuccessUrl("/");
 
     }
 
@@ -52,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure(WebSecurity web) throws Exception{
+    public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/templates/**");
     }
 }
