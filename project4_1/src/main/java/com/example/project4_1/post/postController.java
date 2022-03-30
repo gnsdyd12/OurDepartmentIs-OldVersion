@@ -45,4 +45,24 @@ public class postController {
         return modelAndView;
     }
 
+    @GetMapping("delete_post/{id}")
+    public String deletePost(@PathVariable Long id){
+        postService.deleteById(id);
+        return "redirect:/";
+    }
+
+    @GetMapping("modify_post/{id}")
+    public ModelAndView modifyPost(@PathVariable Long id){
+        Optional<PostDto.PostModifyDto> post = postService.modifyById(id);
+        ModelAndView modelAndview=new ModelAndView();
+        modelAndview.addObject("post", post.get());
+        modelAndview.setViewName("post/modify_post");
+        return modelAndview;
+    }
+    @PostMapping("modify_post/{id}")
+    public String modifyPost(PostDto.PostModifyDto postModifyDto){
+        postService.modify(postModifyDto);
+        return "redirect:/view_post/"+ postModifyDto.getId();
+    }
+
 }

@@ -34,6 +34,13 @@ public class Post {
         this.writer = postSaveDto.getWriter();
         this.views = 0L;
     }
+    public void modify(PostDto.PostModifyDto postModifyDto) {
+        this.id = postModifyDto.getId();
+        this.title = postModifyDto.getTitle();
+        this.contents = postModifyDto.getContents();
+        this.writer = postModifyDto.getWriter();
+        this.views=postModifyDto.getViews();
+    }
 
     public String getWriter() {
         return writer;

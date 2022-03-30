@@ -15,6 +15,8 @@
 <!--    <h6 th:text="${post.writer}"></h6>-->
 <!--    <textarea th:text="${post.contents}" readonly></textarea>-->
     <p th:text="${post.views}"></p>
+    <a th:href="@{'/delete_post/'+${post.id}}">삭제</a>
+    <a th:href="@{'/modify_post/'+${post.id}}">수정</a>
 </div>
 </body>
 <style>
