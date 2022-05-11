@@ -39,7 +39,7 @@ public class PostService {
         if (post.isEmpty()) {
             throw new RuntimeException("아이디가 없습니다");
         } else {
-            return Optional.of(new PostDto.PostModifyDto(post.get().getId(), p ));
+            return Optional.of(new PostDto.PostModifyDto(post.get()));
         }
     }
 
