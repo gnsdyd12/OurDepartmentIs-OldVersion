@@ -23,15 +23,16 @@ public class PostDto {
         private String title;
         private String contents;
         private String writer;
-        private Long views;
 
+
+        public PostModifyDto() {
+        }
 
         public PostModifyDto(Post post){
             this.id= post.getId();
             this.title = post.getTitle();
             this.contents = post.getContents();
             this.writer = post.getWriter();
-            this.views = post.getViews();
         }
     }
 
