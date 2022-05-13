@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -15,6 +15,7 @@
         </div>
         <div th:unless="${#authorization.expr('isAuthenticated()')}">
             <a href="member/login">로그인</a>
+            <a href="member/newMember">회원가입</a>
         </div>
         <div th:text="${session.greeting}"></div>
 
@@ -27,6 +28,7 @@
         <div th:text="${post.contents}"></div>
         <div th:text="${post.writer}"></div>
     </a>
+</div>
 </body>
 
 <style>
