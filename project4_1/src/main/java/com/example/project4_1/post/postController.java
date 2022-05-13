@@ -31,7 +31,6 @@ public class postController {
     //write 페이지
     @GetMapping("write_post")
     public String writePost(ModelAndView modelAndView) {
-        //model.addAttribute("data","hello!!");
         return "post/write_post";
     }
     //게시글 본문
@@ -59,10 +58,11 @@ public class postController {
         modelAndview.setViewName("post/modify_post");
         return modelAndview;
     }
-    @PostMapping("modify_post/{id}")
+    @PostMapping("/modify_post/{id}")
     public String modifyPost(PostDto.PostModifyDto postModifyDto){
         postService.modify(postModifyDto);
-        return "redirect:/view_post/"+ postModifyDto.getId();
+        return "redirect:/";
+        //return "redirect:/modify_post/"+ postModifyDto.getId();
     }
 
 }

@@ -39,7 +39,6 @@ public class Post {
         this.title = postModifyDto.getTitle();
         this.contents = postModifyDto.getContents();
         this.writer = postModifyDto.getWriter();
-        this.views=postModifyDto.getViews();
     }
 
     public String getWriter() {
