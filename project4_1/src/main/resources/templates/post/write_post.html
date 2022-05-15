@@ -24,8 +24,8 @@
     </div>
     <div class="writer">
         <label>
-            작성자 :
-            <input type="text" id="writer" name="writer" required>
+            <div 작성자 : th:text="${session.writer}"></div>
+            <input type="text" id="writer" name="writer" th:value="${session.writer}" hidden>
         </label>
     </div>
     <div class="contents">
