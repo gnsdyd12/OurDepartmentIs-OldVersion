@@ -10,6 +10,7 @@
     <h1>open blog for cs</h1>
     <nav>
         <a href="write_post">글쓰기</a>
+        <a href="mypage/mainpage">마이페이지</a>
         <div th:if="${#authorization.expr('isAuthenticated()')}">
             <a href="/doLogout">로그아웃</a>
         </div>
