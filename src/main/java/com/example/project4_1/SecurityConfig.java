@@ -18,6 +18,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+
+
+    private final CustomOAuth2UserService customOAuth2UserService;
     private final UserDetailsService userDetailsService;
 
 
@@ -30,6 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
+                .headers().frameOptions().disable()
+                .and()
                 .authorizeRequests()
                 .antMatchers("/", "/member/login", "/member/newMember").permitAll()
                 .antMatchers("/member/adminPage").hasRole("ADMIN")
@@ -43,8 +48,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(new MyLoginSuccessHandler())
                 .and()
                 .logout()
-                .logoutUrl("/doLogout")
-                .logoutSuccessUrl("/");
+                .logoutSuccessUrl("/")
+                .and()
+                .oauth2Login()
+                .loginPage("/loginForm")		// 인증이 필요한 URL에 접근하면 /loginForm으로 이동
+                .defaultSuccessUrl("/")			// 로그인 성공하면 "/" 으로 이동
+                .failureUrl("/loginForm")		// 로그인 실패 시 /loginForm으로 이동
+                .userInfoEndpoint()
+                .userService(customOAuth2UserService);
 
     }
 

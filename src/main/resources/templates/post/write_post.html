@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
 
     <meta charset="UTF-8">
@@ -24,8 +24,8 @@
     </div>
     <div class="writer">
         <label>
-            <div 작성자 : th:text="${session.writer}"></div>
-            <input type="text" id="writer" name="writer" th:value="${session.writer}" hidden>
+            <div 작성자 : th:text="${user.name}"></div>
+            <input type="text" id="writer" name="writer" th:value="${user.name}" hidden>
         </label>
     </div>
     <div class="contents">

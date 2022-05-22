@@ -30,6 +30,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	//social_login
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
 	//database
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
@@ -37,7 +39,6 @@ dependencies {
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
 	implementation 'org.apache.tomcat:tomcat-jdbc:9.0.54'
 }
-
 
 tasks.named('test') {
 	useJUnitPlatform()

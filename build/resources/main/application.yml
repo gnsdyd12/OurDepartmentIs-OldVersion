@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/project4_1?autoReconnect=true&characterEncoding=utf8&tcpNoDelay=true&socketTimeout=7000&serverTimezone=UTC
+    url: jdbc:mariadb://localhost:3306/nowourschool?autoReconnect=true&characterEncoding=utf8&tcpNoDelay=true&socketTimeout=7000&serverTimezone=UTC
     username: root
-    password: 1111
+    password: 1234
   jpa:
     show-sql: true
     hibernate:
@@ -12,3 +12,5 @@ spring:
     user:
       name: user
       password: 1234
+  profiles:
+    include: oauth
