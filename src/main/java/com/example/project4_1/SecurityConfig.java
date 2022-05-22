@@ -36,24 +36,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().frameOptions().disable()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/member/login", "/member/newMember").permitAll()
-                .antMatchers("/member/adminPage").hasRole("ADMIN")
-                .antMatchers("/**").authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/member/login")
-                .loginProcessingUrl("/member/doLogin")
-                .usernameParameter("id")
-                .passwordParameter("pw")
-                .successHandler(new MyLoginSuccessHandler())
+                .antMatchers("/").permitAll()
+                .antMatchers("/write_post","/mypage/**").hasRole("USER")
+//                .antMatchers("/**").authenticated()
+//                .and()
+//                .formLogin()
+//                .loginPage("/member/login")
+//                .loginProcessingUrl("/member/doLogin")
+//                .usernameParameter("id")
+//                .passwordParameter("pw")
+//                .successHandler(new MyLoginSuccessHandler())
                 .and()
                 .logout()
                 .logoutSuccessUrl("/")
                 .and()
                 .oauth2Login()
-                .loginPage("/loginForm")		// 인증이 필요한 URL에 접근하면 /loginForm으로 이동
+//                .loginPage("/loginForm")		// 인증이 필요한 URL에 접근하면 /loginForm으로 이동
                 .defaultSuccessUrl("/")			// 로그인 성공하면 "/" 으로 이동
-                .failureUrl("/loginForm")		// 로그인 실패 시 /loginForm으로 이동
+//                .failureUrl("/loginForm")		// 로그인 실패 시 /loginForm으로 이동
                 .userInfoEndpoint()
                 .userService(customOAuth2UserService);
 

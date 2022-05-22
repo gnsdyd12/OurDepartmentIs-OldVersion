@@ -39,7 +39,9 @@ public class postController {
     @GetMapping("write_post")
     public ModelAndView writePost(ModelAndView modelAndView) {
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
-        modelAndView.addObject("user",user);
+        if(user!=null){
+            modelAndView.addObject("user",user);
+        }
         modelAndView.setViewName("post/write_post");
         return modelAndView;
     }
