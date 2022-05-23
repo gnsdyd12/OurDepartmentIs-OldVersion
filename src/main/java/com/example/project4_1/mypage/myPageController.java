@@ -3,6 +3,7 @@ package com.example.project4_1.mypage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -24,8 +25,4 @@ public class myPageController {
         return "mypage/my_info";
     }
 
-    @GetMapping("/temporaryPost")
-    public String temporaryPost(){
-        return "mypage/temporary_post";
-    }
 }

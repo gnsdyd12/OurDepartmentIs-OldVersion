@@ -20,7 +20,6 @@ public class PostService {
     }
 
 
-
     public List<PostDto.PostListDto> findByAll() {
         return postRepo.findAllByIdIsNotNull();
     }

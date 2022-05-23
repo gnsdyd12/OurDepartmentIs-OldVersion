@@ -13,9 +13,8 @@
 <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js">
 </script>
 <div id="editor"></div>
-<!--<button onclick="submit()">포스팅</button>-->
 
-<form id="writeForm" action="/postdata" method="POST" onsubmit="handlerEditor()">
+<form id="writeForm" method="POST" onsubmit="handlerEditor()">
     <div class="title">
         <label>
             제목:
@@ -31,7 +30,8 @@
     <div class="contents">
         <textarea id="contents" name="contents" hidden></textarea>
     </div>
-    <button class="summit_btn" type="submit">포스팅하기</button>
+    <button class="summit_btn" type="submit" formaction="/postdata">포스팅하기</button>
+    <button class="temp_summit_btn" type="submit" formaction="/temporaryPost">임시저장</button>
 </form>
 </body>
 <style>
@@ -46,6 +46,10 @@
         margin: 10px;
     }
     .summit_btn{
+        position: relative;
+        left: 49%;
+    }
+    .temp_summit_btn{
         position: relative;
         left: 49%;
     }
