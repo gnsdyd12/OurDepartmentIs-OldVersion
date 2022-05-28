@@ -11,12 +11,12 @@
     <h1>open blog for cs</h1>
 
 </header>
-
 <div class="container">
-    <a th:each="temp : ${tempPost}">
-        <div th:text="${temp.title}"></div>
-        <div th:text="${temp.content}"></div>
-        <div th:text="${temp.writer}"></div>
+    <div th:if="${tempPost.size()==0}">임시 저장된 게시물이 없습니다.</div>
+    <a th:href="@{'continueWrite/'+${tempPost.id}}" class="contents" th:each="tempPost : ${tempPost}">
+        <div th:text="${tempPost.title}"></div>
+        <div th:text="${tempPost.contents}"></div>
+        <div th:text="${tempPost.writer}"></div>
     </a>
 </div>
 </body>
@@ -54,6 +54,10 @@
 
     .nav_bar > nav {
         padding: 30px;
+    }
+
+    .contents{
+        border: solid 2px;
     }
 
 </style>

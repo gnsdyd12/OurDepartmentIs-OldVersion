@@ -24,4 +24,20 @@ public class TemporaryPostDto {
         private String writer;
     }
 
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    public static class TemporaryPostModifyDto{
+        private Long id;
+        private String title;
+        private String contents;
+        private String writer;
+
+        public TemporaryPostModifyDto(TemporaryPost temporaryPost) {
+            this.id=temporaryPost.getId();
+            this.title=temporaryPost.getTitle();
+            this.contents=temporaryPost.getTitle();
+            this.writer=temporaryPost.getWriter();
+        }
+    }
 }

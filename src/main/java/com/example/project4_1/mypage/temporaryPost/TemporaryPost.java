@@ -26,17 +26,24 @@ public class TemporaryPost {
     public TemporaryPost() {
 
     }
-    public TemporaryPost(TemporaryPostDto.TemporaryPostSaveDto temporaryPostSaveDto){
-        title=temporaryPostSaveDto.getTitle();
-        writer= temporaryPostSaveDto.getWriter();
-        contents= temporaryPostSaveDto.getContents();
+
+    public TemporaryPost(TemporaryPostDto.TemporaryPostSaveDto temporaryPostSaveDto) {
+        title = temporaryPostSaveDto.getTitle();
+        writer = temporaryPostSaveDto.getWriter();
+        contents = temporaryPostSaveDto.getContents();
     }
-//    public TemporaryPost(TemporaryPostDto.TemporaryPostListDto temporaryPostListDto){
+
+    //    public TemporaryPost(TemporaryPostDto.TemporaryPostListDto temporaryPostListDto){
 //        id=temporaryPostListDto.getId();
 //        title=temporaryPostListDto.getTitle();
 //        writer= temporaryPostListDto.getWriter();
 //        contents= temporaryPostListDto.getContents();
 //    }
+    public TemporaryPost(TemporaryPostDto.TemporaryPostModifyDto temporaryPostModifyDto) {
+        title = temporaryPostModifyDto.getTitle();
+        writer = temporaryPostModifyDto.getWriter();
+        contents = temporaryPostModifyDto.getContents();
+    }
 
 
 }
